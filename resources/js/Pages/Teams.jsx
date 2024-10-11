@@ -1,16 +1,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import {Head} from '@inertiajs/react';
 
-export default function Teams() {
-    return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Teams
-                </h2>
-            }
-        >
-            <Head title="Teams" />
+const Teams = () => {
+    return (<>
+            <Head title="Teams"/>
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -21,6 +14,13 @@ export default function Teams() {
                     </div>
                 </div>
             </div>
-        </AuthenticatedLayout>
-    );
-}
+        </>);
+};
+
+Teams.layout = page => <AuthenticatedLayout
+    header={<h2 className="text-xl font-semibold leading-tight text-gray-800">
+        Teams
+    </h2>}
+>{page}</AuthenticatedLayout>;
+
+export default Teams;
